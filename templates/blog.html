@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% block title %}Blog{% endblock title %} 
+{% block body %}
+<div class="container">
+    <h1 class="mt-5 text-center">Latest Blogs</h1>
+    <div class="row">
+        {% if blogs %} 
+            {% for blog in blogs %}
+                <div class="blogs mt-5 col-lg-4">
+                    <a href="{% url 'details' blog.id %}" class="text-decoration-none">
+                        <div class="card" style="width: 25rem">
+                            <img src="{{blog.banner.url}}" class="card-img-top" alt="{{blog.title}}" />
+                            <div class="card-body">
+                                <h5 class="card-title">{{blog.title}}</h5>
+                                <p class="card-text">
+                                    {{blog.description|truncatewords:15}}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %} 
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}

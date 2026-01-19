@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Post{% endblock title %}
+{% block body %}
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{message}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="post d-flex flex-column align-items-center mt-5">
+            <h1>Post Something</h1>
+            <form method="post" class="col-6" action="{% url 'post' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                    <label for="banner" class="form-label">Upload a banner</label>
+                    <input type="file" class="form-control" id="banner" name="banner" required>
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description here:</label>
+                    <textarea class="form-control" name="description" id="desc" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock body %}

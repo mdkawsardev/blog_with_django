@@ -1,0 +1,24 @@
+{% extends "base.html" %} 
+{% block title %}Blog | Details{% endblock title %} 
+{% block body %}
+<div class="container">
+    <h1 class="mt-5 text-center">Details blog</h1>
+    <div class="row">
+        {% if blogs %} 
+            {% for blog in blogs %}
+                <div class="blogs mt-5 col-lg-6">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{blog.banner.url}}" class="card-img-top" alt="{{blog.title}}" />
+                        <div class="card-body">
+                            <h5 class="card-title">{{blog.title}}</h5>
+                            <p class="card-text">
+                                {{blog.description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %} 
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}
