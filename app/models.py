@@ -12,3 +12,6 @@ class Post(models.Model):
 
 class Select(models.Model):
     select = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+class Number(models.Model):
+    number = models.CharField(max_length=20)
