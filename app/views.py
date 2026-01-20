@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.http import HttpResponse
 from .models import Post
 # Create your views here.
 def index(request):
@@ -30,3 +31,6 @@ def details(request, pk):
         'blogs': Post.objects.filter(id=pk).all()
     }
     return render(request, 'details.html', context)
+
+def category(request):
+    return HttpResponse("I'm done")
