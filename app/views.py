@@ -38,8 +38,8 @@ def category(request):
 def analyze(request):
     if request.method == "GET":
         texts = request.GET.get('texts')
-        punch = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
         checkbox = request.GET.get('checkme', 'off')
+        punch = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
         value = ""
         # This operation is to remove punctuation marks from texts
         if checkbox == "on":

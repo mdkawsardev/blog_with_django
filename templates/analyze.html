@@ -5,13 +5,13 @@
         <h1 class="mt-5">Text Analyzer</h1>
         <div class="row">
             <div class="col-6">
-                <form action="{% url 'analyze' %}" method="get">
+                <form action="{% url 'analyze' %}" method="GET">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Enter your texts</label>
                         <textarea class="form-control" name="texts" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="checkbox" name="checkme">
+                        <input type="checkbox" class="form-check-input" name="checkme"> Remove Punctuations
                     </div>
                     <button type="submit" class="btn btn-primary">Analyze</button>
                 </form>
