@@ -9,7 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     banner = models.ImageField(upload_to='media/', blank=True, default='project1.png')
     description = models.TextField()
-    unique_code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    unique_code = models.UUIDField(default=uuid.uuid4, editable=False, null=True)
 
 class Select(models.Model):
     select = models.ForeignKey(Category, on_delete=models.CASCADE)

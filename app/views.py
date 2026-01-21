@@ -26,9 +26,9 @@ def post(request):
         return redirect('post')
     return render(request, 'post.html')
 
-def details(request, pk):
+def details(request, unique_code):
     context = {
-        'blogs': Post.objects.filter(id=pk).all()
+        'blogs': Post.objects.filter(unique_code=unique_code).all()
     }
     return render(request, 'details.html', context)
 
