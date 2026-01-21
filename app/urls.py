@@ -7,4 +7,5 @@ urlpatterns = [
     path('post/', views.post, name='post'),
     path('details/<uuid:unique_code>/', views.details, name='details'),
     path('category/', views.category, name='category'),
+    path('analyze/', views.analyze, name='analyze'),
 ]

@@ -34,3 +34,6 @@ def details(request, unique_code):
 
 def category(request):
     return HttpResponse("I'm done")
+
+def analyze(request):
+    return render(request, 'analyze.html')
