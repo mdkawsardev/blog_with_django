@@ -36,4 +36,14 @@ def category(request):
     return HttpResponse("I'm done")
 
 def analyze(request):
-    return render(request, 'analyze.html')
+    if request.method == "GET":
+        texts = request.GET.get('texts')
+        punch = '''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~'''
+        checkbox = request.GET.get('checkme', 'off')
+        value = ""
+        # This operation is to remove punctuation marks from texts
+        if checkbox == "on":
+            for text in texts:
+                if text not in punch:
+                    value+= text
+    return render(request, 'analyze.html', {'text':value})
