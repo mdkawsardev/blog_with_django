@@ -7,7 +7,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    banner = models.ImageField(upload_to='media/', blank=True, default='project1.png')
+    banner = models.ImageField(upload_to='media/', blank=True, default='media/default.jpg')
     description = models.TextField()
     unique_code = models.UUIDField(default=uuid.uuid4, editable=False, null=True)
 
