@@ -2,6 +2,7 @@
 {% block title %}Blog{% endblock title %} 
 {% block body %}
 <div class="container">
+    <a href="{% url 'index' %}" class="mt-5 d-block">Back home</a>
     <h1 class="mt-5 text-center">Latest Blogs</h1>
     <div class="row">
         {% if blogs %} 
