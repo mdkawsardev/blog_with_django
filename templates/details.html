@@ -20,7 +20,7 @@
             {% endfor %} 
         {% endif %} {% endcomment %}
         {% for blog in blogs %}
-            <form method="post" class="col-6" action="{% url 'details' blog.unique_code %}" enctype="multipart/form-data">
+            <form method="post" class="col-6" action="{% url 'edit' blog.unique_code %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
