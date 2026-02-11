@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="mt-5 text-center">Details blog</h1>
     <div class="row">
-        {% comment %} {% if blogs %} 
+        {% if blogs %} 
             {% for blog in blogs %}
                 <div class="blogs mt-5 col-lg-6">
                     <div class="card" style="width: 100%;">
@@ -18,26 +18,7 @@
                     </div>
                 </div>
             {% endfor %} 
-        {% endif %} {% endcomment %}
-        {% for blog in blogs %}
-            <form method="post" class="col-6" action="{% url 'edit' blog.unique_code %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" value="{{blog.title}}" name="title" aria-describedby="emailHelp" required>
-                </div>
-                <div class="mb-3">
-                    <label for="banner" class="form-label">Upload a banner</label>
-                    <input type="file" class="form-control" id="banner" name="banner" required>
-                    <img src="{{blog.banner.url}}" alt="">
-                </div>
-                <div class="mb-3">
-                    <label for="desc" class="form-label">Description here:</label>
-                    <textarea class="form-control" name="description" id="desc" required>{{blog.description}}</textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">update</button>
-            </form>
-        {% endfor %}
+        {% endif %}
     </div>
 </div>
 {% endblock body %}
