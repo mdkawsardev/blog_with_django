@@ -8,4 +8,5 @@ urlpatterns = [
     path('details/<uuid:unique_code>/', views.details, name='details'),
     path('category/', views.category, name='category'),
     path('analyze/', views.analyze, name='analyze'),
+    path('edit/', views.edit, name='edit'),
 ]
