@@ -59,4 +59,4 @@ def edit(request, unique_code):
         data.title = request.POST['title']
         data.description = request.POST['description']
         data.save()
-    return redirect('details/')
+    return redirect('details')
