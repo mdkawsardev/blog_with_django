@@ -76,13 +76,23 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "blog_site",
-        "USER": "blogadmin",
-        "PASSWORD": "blogadmin123",
+        "NAME": "mdkawsa1_myblog",
+        "USER": "mdkawsa1_kawsar",
+        "PASSWORD": "kawsar123!@#",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "blog_site",
+#         "USER": "blogadmin",
+#         "PASSWORD": "blogadmin123",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
 
 
 # Password validation
@@ -120,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
